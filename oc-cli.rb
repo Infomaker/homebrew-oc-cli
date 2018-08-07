@@ -14,9 +14,9 @@ class OcCli < Formula
     system "go", "get", "github.com/cpuguy83/go-md2man"
      
     # Generate the bash completion script 
-    system "go", "run", "bitbucket.org/oc-cli-bash-completion.go"
+    system "go", "run", "bitbucket.org/oc-cli/oc-cli-bash-completion.go"
 
- 	  system "go", "build", "-o", "bitbucket.org/oc-cli", "-ldflags", "-X main.appVersion=0.2", "oc-cli.go"
+ 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.appVersion=0.2", "bitbucket.org/oc-cli/oc-cli.go"
 
 	  bin.install "oc-cli"
 	  bash_completion.install "bash-completion/oc-cli"
@@ -27,7 +27,7 @@ class OcCli < Formula
     #
     # This test will fail and we won't accept that! It's enough to just replace
     # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test writer-toolbox`. Options passed
+    # were more thorough. Run the test with `brew test oc-cli`. Options passed
     # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
     #
     # The installed folder is not in the path, so use the entire path to any
