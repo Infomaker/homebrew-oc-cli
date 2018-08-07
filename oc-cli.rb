@@ -2,7 +2,7 @@ class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
-  sha256  "d5f046b9ba3e1ceba4d6ac3eebf6a7454e860f6f56b97d52f188d7dfa75f9c61"
+  sha256  "743cd43a9f42d2c68ef8cfa6d9fbd4a45f43cb92f277fb061d450a1ade59ea50"
 
   depends_on "go" => :build
 
@@ -13,7 +13,8 @@ class OcCli < Formula
     system "go", "get", "-u", "github.com/spf13/cobra/cobra"
     system "go", "get", "github.com/cpuguy83/go-md2man"
     
-    system "script/fix.sh"
+    # Need to move directory structure to src, to be able to build
+    system "script/move-for-homebrew.sh"
        
     # Generate the bash completion script 
     system "go", "run", "src/oc-cli/oc-cli-bash-completion.go"
