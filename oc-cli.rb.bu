@@ -2,7 +2,7 @@ class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
-  sha256  "92a6075eefc58dda75790fc448486b1afc45cfc2fa1f06b4b0f9415b3529ce82"
+  sha256  "fa47bf0b23a419c49c7443529daa9243b20d10ddc574cfd9975075f16780d5da"
 
   depends_on "go" => :build
 
@@ -18,7 +18,7 @@ class OcCli < Formula
     # Generate the bash completion script 
     system "go", "run", "src/oc-cli/oc-cli-bash-completion.go"
 
- 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X cmd.AppVersion=0.3", "src/oc-cli/oc-cli.go"
+ 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.Version=0.3", "src/oc-cli/oc-cli.go"
 
 	  bin.install "oc-cli"
 	  bash_completion.install "bash-completion/oc-cli"
