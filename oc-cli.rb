@@ -9,7 +9,7 @@ class OcCli < Formula
   def install
 	  ENV["GOPATH"] = buildpath
 
-    system "bin/fix.sh"
+    system "script/fix.sh"
 
     # system "go", "get", "github.com/aws/aws-sdk-go"
     # system "go", "get", "-u", "github.com/spf13/cobra/cobra"
