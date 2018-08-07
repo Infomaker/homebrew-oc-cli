@@ -9,19 +9,14 @@ class OcCli < Formula
   def install
 	  ENV["GOPATH"] = buildpath
 
-    system "pwd"
-    system "ls", "-la"
-
     system "go", "get", "github.com/aws/aws-sdk-go"
     system "go", "get", "-u", "github.com/spf13/cobra/cobra"
     system "go", "get", "github.com/cpuguy83/go-md2man"
     
-
-
     # Generate the bash completion script 
-    system "go", "run", "bitbucket.org/oc-cli/oc-cli-bash-completion.go"
+    # system "go", "run", "bitbucket.org/oc-cli/oc-cli-bash-completion.go"
 
- 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.appVersion=0.2", "bitbucket.org/oc-cli/oc-cli.go"
+ 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.appVersion=0.2", "oc-cli.go"
 
 	  bin.install "oc-cli"
 	  bash_completion.install "bash-completion/oc-cli"
