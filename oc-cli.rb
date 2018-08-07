@@ -16,7 +16,7 @@ class OcCli < Formula
     # Generate the bash completion script 
     system "go", "run", "oc-cli-bash-completion.go"
 
- 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.appVersion=0.1", "oc-cli.go"
+ 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.appVersion=0.2", "oc-cli.go"
 
 	  bin.install "oc-cli"
 	  bash_completion.install "bash-completion/oc-cli"
