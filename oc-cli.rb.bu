@@ -2,27 +2,27 @@ class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
-  sha256  "acf00d81cb7973ff5ec83f81bfde1653a1cfe0fee5bc2d9b113363373c81660b"
+  sha256  "6e2bf72bafd7f77dd483a330a326cb4b3fd09b4e51985a7de309c8d830d695fa"
 
   depends_on "go" => :build
 
   def install
 	  ENV["GOPATH"] = buildpath
 
-    system "go", "get", "github.com/aws/aws-sdk-go"
-    system "go", "get", "-u", "github.com/spf13/cobra/cobra"
-    system "go", "get", "github.com/cpuguy83/go-md2man"
-    system "go", "get", "-u", "github.com/disintegration/imaging"
-    system "go", "get", "-u", "github.com/satori/go.uuid"
-
-    
-    # Need to move directory structure to src, to be able to build
-    system "script/move-for-homebrew.sh"
-       
-    # Generate the bash completion script 
-    system "go", "run", "src/oc-cli/oc-cli-bash-completion.go"
-
- 	  system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.Version=0.3", "src/oc-cli/oc-cli.go"
+    # system "go", "get", "github.com/aws/aws-sdk-go"
+    # system "go", "get", "-u", "github.com/spf13/cobra/cobra"
+    # system "go", "get", "github.com/cpuguy83/go-md2man"
+    # system "go", "get", "-u", "github.com/disintegration/imaging"
+    # system "go", "get", "-u", "github.com/satori/go.uuid"
+    #
+    #
+    # # Need to move directory structure to src, to be able to build
+    # system "script/move-for-homebrew.sh"
+    #
+    # # Generate the bash completion script
+    # system "go", "run", "src/oc-cli/oc-cli-bash-completion.go"
+    #
+ 	  # system "go", "build", "-o", "oc-cli", "-ldflags", "-X main.Version=0.3", "src/oc-cli/oc-cli.go"
 
 	  bin.install "oc-cli"
 	  bash_completion.install "bash-completion/oc-cli"
