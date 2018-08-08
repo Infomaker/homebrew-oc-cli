@@ -2,7 +2,7 @@ class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
-  sha256  "2dd78940c280ca86d6b1d78d68ef0090450a435719017394996202ffaab6c911"
+  sha256  "8e3bbdf9080f79c3934787297f1d74fb28895d10809e717e355dd661c685e2a9"
 
   depends_on "go" => :build
 
@@ -12,6 +12,8 @@ class OcCli < Formula
     system "go", "get", "github.com/aws/aws-sdk-go"
     system "go", "get", "-u", "github.com/spf13/cobra/cobra"
     system "go", "get", "github.com/cpuguy83/go-md2man"
+    system "go", "get", "-u", "github.com/disintegration/imaging"
+
     
     # Need to move directory structure to src, to be able to build
     system "script/move-for-homebrew.sh"
