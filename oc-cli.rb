@@ -4,10 +4,10 @@ class OcCli < Formula
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
   sha256  "7149aa48ba0e230a60e19dc1b772c145a1c658467e1ff99ba29d7e303f0f737e"
 
-  depends_on "go" => :build
+  # depends_on "go" => :build
 
   def install
-	  ENV["GOPATH"] = buildpath
+	#  ENV["GOPATH"] = buildpath
 
     # commented out when building application locally when installing it
     # system "go", "get", "github.com/aws/aws-sdk-go"
