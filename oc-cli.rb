@@ -2,13 +2,14 @@ class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
   url "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli.tar.gz"
-  sha256  "f0b87168e78c9baa8f9bbdff54eedb9c80bd4bee29878443141e46bfa94a3bd7"
+  sha256  "74fdecd3aa784b03ad47606be8d4c6277b23ab015879eb8c4b887ba7a7fa22dc"
 
   depends_on "go" => :build
 
   def install
 	  ENV["GOPATH"] = buildpath
 
+    # commented out when building application locally when installing it
     # system "go", "get", "github.com/aws/aws-sdk-go"
     # system "go", "get", "-u", "github.com/spf13/cobra/cobra"
     # system "go", "get", "github.com/cpuguy83/go-md2man"
