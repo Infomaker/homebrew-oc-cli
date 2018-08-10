@@ -1,8 +1,8 @@
 class OcCli < Formula
   desc "Open Content CLI"
   homepage "https://bitbucket.org/infomaker/oc-cli"
-  url  "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli-0.11.tar.gz"
-  sha256  "646a7b83df2ccdacacc7a1c079033ca405632ea284424e23b8392db7cd4e4c41"
+  url  "https://s3-eu-west-1.amazonaws.com/open-content-artifacts/oc-cli/oc-cli-0.12.tar.gz"
+  sha256  "ce5e5f41bd2eedb07b588327ec9fd347cc163fd2d682ce3856ba630cbd34423c"
 
   # depends_on "go" => :build
 
